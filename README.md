@@ -6,7 +6,7 @@
 
 ## 🎯 O QUE VOCÊ TEM
 
-Você agora possui **3 documentos especializados** para refatoração de projetos:
+Você agora possui **4 documentos especializados** para refatoração e teste de projetos:
 
 ### 📄 **Documento 1: Front-End (React/Next.js)**
 
@@ -71,6 +71,26 @@ Especializado em refatoração de **backend profissional com NestJS**:
 
 ---
 
+### 📄 **Documento 4: Testes & Cobertura (Agnóstico de Stack)**
+
+**Arquivo:** `4_Testes_Cobertura_Otimizado.md`
+
+Especializado em **cobertura de testes 100%**, em qualquer linguagem/framework:
+
+- Leitura autônoma do diretório (lê o projeto, não pede código colado)
+- Mapeamento ultra-específico de regras de negócio (`business-rules.md`)
+- Reconciliação de testes existentes (corrige testes que validam bugs, renomeia, remove redundantes)
+- Árvore de branches completa + Pirâmide de Testes (Unit/Integration/E2E)
+- Modo projeto extenso com plano de fases autônomo (`test-plan.md`)
+
+**Quando usar:** Você já refatorou o projeto (Docs 1-3) e quer **cobertura de testes real** que encontra defeitos, não só "passa" — em qualquer stack (não impõe framework de teste próprio, usa o que já existe no projeto)
+
+**Total de prompts:** 1 (fluxo completo)  
+**Tempo de análise:** varia com o tamanho do projeto (modo padrão: 2 pontos de confirmação; modo projeto extenso: execução por fases sem parada)  
+**Tempo de implementação:** varia com a cobertura atual do projeto
+
+---
+
 ## 🗺️ COMO ESCOLHER QUAL DOCUMENTO USAR
 
 ```
@@ -89,24 +109,28 @@ Especializado em refatoração de **backend profissional com NestJS**:
 └─ NestJS em repositório separado
    └─ Documento 3: Backend (NestJS) ✅
       (+ use Documento 1 ou 2 para frontend que consome)
+
+Depois de refatorar (qualquer combinação acima):
+└─ Quer cobertura de testes real sobre o código já refatorado?
+   └─ Documento 4: Testes & Cobertura ✅ (qualquer stack)
 ```
 
 ---
 
 ## 📊 TABELA COMPARATIVA
 
-| Aspecto                 | Doc 1: Front-End       | Doc 2: Full-Stack   | Doc 3: Backend         |
-| ----------------------- | ---------------------- | ------------------- | ---------------------- |
-| **Foco**                | React/Next.js frontend | Next.js completo    | NestJS backend         |
-| **Prompts**             | 7                      | 5                   | 6                      |
-| **Tempo de análise**    | 110-140 min            | 75-100 min          | 95-130 min             |
-| **Tempo implementação** | 25-50h                 | 20-41h              | 27-52h                 |
-| **Performance**         | Front-end metrics      | End-to-end          | Backend optimization   |
-| **Segurança**           | XSS, CSRF              | Full-stack OWASP    | OWASP Top 10           |
-| **Database**            | Não                    | Sim (básico)        | Sim (profundo)         |
-| **API Routes**          | Não                    | Sim                 | Não (NestJS routes)    |
-| **Testes**              | Unit, Integration, E2E | Unit, Integration   | Unit, Integration, E2E |
-| **Melhor para**         | Frontend puro          | Monorepo full-stack | Backend separado       |
+| Aspecto                 | Doc 1: Front-End       | Doc 2: Full-Stack   | Doc 3: Backend         | Doc 4: Testes                        |
+| ----------------------- | ---------------------- | ------------------- | ---------------------- | ------------------------------------- |
+| **Foco**                | React/Next.js frontend | Next.js completo    | NestJS backend         | Cobertura de testes (qualquer stack) |
+| **Prompts**             | 7                      | 5                   | 6                      | 1 (fluxo completo)                    |
+| **Tempo de análise**    | 110-140 min            | 75-100 min          | 95-130 min             | Varia com o tamanho do projeto        |
+| **Tempo implementação** | 25-50h                 | 20-41h              | 27-52h                 | Varia com a cobertura atual           |
+| **Performance**         | Front-end metrics      | End-to-end          | Backend optimization   | —                                      |
+| **Segurança**           | XSS, CSRF              | Full-stack OWASP    | OWASP Top 10           | —                                      |
+| **Database**            | Não                    | Sim (básico)        | Sim (profundo)         | —                                      |
+| **API Routes**          | Não                    | Sim                 | Não (NestJS routes)    | —                                      |
+| **Testes**              | Unit, Integration, E2E | Unit, Integration   | Unit, Integration, E2E | Unit, Integration, E2E (100%)         |
+| **Melhor para**         | Frontend puro          | Monorepo full-stack | Backend separado       | Qualquer projeto já refatorado        |
 
 ---
 
@@ -172,6 +196,23 @@ Especializado em refatoração de **backend profissional com NestJS**:
 
 ---
 
+### Cenário 4: Cobertura de Testes (Após Qualquer Refatoração Acima)
+
+```
+┌─────────────────────────────────────────┐
+│ 1-3. Refatoração (Doc 1, 2 e/ou 3)      │ ← Já executado
+└─────────────────────────────────────────┘
+                    ↓
+┌─────────────────────────────────────────┐
+│ 4. Testes & Cobertura (Doc 4)           │ ← Roda por último
+│    (fluxo único, tempo varia)           │ (testa o código já refatorado)
+└─────────────────────────────────────────┘
+```
+
+**Por quê por último?** Testar antes de refatorar significa reescrever os testes depois que a arquitetura mudar. Doc 4 assume que o código já está na forma final.
+
+---
+
 ## 🎯 ORDEM DE EXECUÇÃO POR PRIORIDADE
 
 Independente do documento, **sempre siga essa ordem**:
@@ -220,7 +261,13 @@ Independente do documento, **sempre siga essa ordem**:
 15. **Back-End:** Prompt 6 (API Documentation)
 16. **Front-End:** Prompt 7 (Acessibilidade & SEO)
 
-→ **Por quê?** Último passo. Frontend e terceiros dependem disso.
+→ **Por quê?** Último passo antes de testes. Frontend e terceiros dependem disso.
+
+### 🧪 COBERTURA DE TESTES
+
+17. **Testes:** Doc 4 (Cobertura 100%, agnóstico de stack)
+
+→ **Por quê?** Roda por último — testa o código já refatorado, arquitetado, seguro e documentado, evitando reescrever testes por causa de mudanças posteriores.
 
 ---
 
@@ -300,6 +347,7 @@ O resultado de cada prompt é um **relatório estruturado** com:
 - **Next.js (com API Routes):** Doc 1 + Doc 2 (Front-End + Full-Stack)
 - **NestJS:** Doc 3 (Backend)
 - **Next.js + NestJS:** Doc 1 + Doc 2 + Doc 3
+- **Qualquer stack, quero cobertura de testes:** Doc 4 (Testes), depois de refatorar
 
 ### Por Tópico
 
@@ -325,6 +373,7 @@ O resultado de cada prompt é um **relatório estruturado** com:
 - Front-End → Incluído em Prompts 4 & 7
 - Back-End → Prompt 5 (Testes & Observabilidade)
 - Full-Stack → Prompt 5 (Testes & Observabilidade)
+- Cobertura 100% (qualquer stack) → Doc 4 (Testes & Cobertura) **← use por último**
 
 ---
 
@@ -359,7 +408,11 @@ O resultado de cada prompt é um **relatório estruturado** com:
 → Abra: `3_Backend_NestJS_Otimizado.md`
 → Comece: Prompt 3 (Segurança OWASP)
 
-**D) Não tenho certeza**
+**D) Já refatorei e quero cobertura de testes 100%**
+→ Abra: `4_Testes_Cobertura_Otimizado.md`
+→ Comece: o prompt único do documento (funciona em qualquer stack)
+
+**E) Não tenho certeza**
 → Responda essas 3 perguntas:
 
 1. Seu código é React/Next.js ou NestJS?
