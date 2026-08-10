@@ -6,7 +6,7 @@
 
 ## 🎯 O QUE VOCÊ TEM
 
-Você agora possui **4 documentos especializados** para refatoração e teste de projetos:
+Você agora possui **5 documentos especializados** para auditoria, refatoração e teste de projetos:
 
 ### 📄 **Documento 1: Front-End (React/Next.js)**
 
@@ -91,9 +91,33 @@ Especializado em **cobertura de testes 100%**, em qualquer linguagem/framework:
 
 ---
 
+### 📄 **Documento 5: Auditoria de Engenharia (Read-Only, Agnóstico de Stack)**
+
+**Arquivo:** `5_Auditoria_Engenharia_Software_ReadOnly.md`
+
+Especializado em **diagnóstico técnico sem nenhuma alteração de código**:
+
+- Detecção automática de stack via evidência de arquivo
+- Avaliação SOLID, DRY, KISS, YAGNI, Clean Code — cada achado com arquivo:linha
+- Código morto com checklist anti-falso-positivo
+- Dependências não usadas ou duplicadas
+- Cobertura de testes por statement e branch (se aplicável)
+- Relatório único classificado por severidade (Crítico/Alto/Médio/Baixo)
+
+**Quando usar:** Você ainda não sabe onde estão os problemas reais do projeto e quer um **diagnóstico objetivo, sem risco** (zero edição, zero commit, zero push) antes de decidir onde investir esforço — normalmente o **primeiro documento a rodar**, antes dos Docs 1-4
+
+**Total de prompts:** 1 (fluxo completo)  
+**Tempo de análise:** varia com o tamanho do projeto  
+**Tempo de implementação:** N/A (documento não corrige nada, apenas diagnostica)
+
+---
+
 ## 🗺️ COMO ESCOLHER QUAL DOCUMENTO USAR
 
 ```
+┌─ Não sabe onde estão os problemas ainda?
+│  └─ Documento 5: Auditoria (Read-Only) ✅ — rode primeiro, sem risco
+│
 ┌─ Qual é sua stack?
 │
 ├─ React ou Next.js (sem backend separado)
@@ -119,22 +143,47 @@ Depois de refatorar (qualquer combinação acima):
 
 ## 📊 TABELA COMPARATIVA
 
-| Aspecto                 | Doc 1: Front-End       | Doc 2: Full-Stack   | Doc 3: Backend         | Doc 4: Testes                        |
-| ----------------------- | ---------------------- | ------------------- | ---------------------- | ------------------------------------- |
-| **Foco**                | React/Next.js frontend | Next.js completo    | NestJS backend         | Cobertura de testes (qualquer stack) |
-| **Prompts**             | 7                      | 5                   | 6                      | 1 (fluxo completo)                    |
-| **Tempo de análise**    | 110-140 min            | 75-100 min          | 95-130 min             | Varia com o tamanho do projeto        |
-| **Tempo implementação** | 25-50h                 | 20-41h              | 27-52h                 | Varia com a cobertura atual           |
-| **Performance**         | Front-end metrics      | End-to-end          | Backend optimization   | —                                      |
-| **Segurança**           | XSS, CSRF              | Full-stack OWASP    | OWASP Top 10           | —                                      |
-| **Database**            | Não                    | Sim (básico)        | Sim (profundo)         | —                                      |
-| **API Routes**          | Não                    | Sim                 | Não (NestJS routes)    | —                                      |
-| **Testes**              | Unit, Integration, E2E | Unit, Integration   | Unit, Integration, E2E | Unit, Integration, E2E (100%)         |
-| **Melhor para**         | Frontend puro          | Monorepo full-stack | Backend separado       | Qualquer projeto já refatorado        |
+| Aspecto                 | Doc 1: Front-End       | Doc 2: Full-Stack   | Doc 3: Backend         | Doc 4: Testes                        | Doc 5: Auditoria                  |
+| ----------------------- | ---------------------- | ------------------- | ---------------------- | ------------------------------------- | ---------------------------------- |
+| **Foco**                | React/Next.js frontend | Next.js completo    | NestJS backend         | Cobertura de testes (qualquer stack) | Diagnóstico read-only (qualquer stack) |
+| **Prompts**             | 7                      | 5                   | 6                      | 1 (fluxo completo)                    | 1 (fluxo completo)                 |
+| **Tempo de análise**    | 110-140 min            | 75-100 min          | 95-130 min             | Varia com o tamanho do projeto        | Varia com o tamanho do projeto     |
+| **Tempo implementação** | 25-50h                 | 20-41h              | 27-52h                 | Varia com a cobertura atual           | N/A (não corrige nada)             |
+| **Performance**         | Front-end metrics      | End-to-end          | Backend optimization   | —                                      | —                                   |
+| **Segurança**           | XSS, CSRF              | Full-stack OWASP    | OWASP Top 10           | —                                      | —                                   |
+| **Database**            | Não                    | Sim (básico)        | Sim (profundo)         | —                                      | —                                   |
+| **API Routes**          | Não                    | Sim                 | Não (NestJS routes)    | —                                      | —                                   |
+| **Testes**              | Unit, Integration, E2E | Unit, Integration   | Unit, Integration, E2E | Unit, Integration, E2E (100%)         | Reporta cobertura existente        |
+| **Edita código?**       | Sim                    | Sim                 | Sim                    | Sim (gera testes)                     | **Não — somente leitura**          |
+| **Melhor para**         | Frontend puro          | Monorepo full-stack | Backend separado       | Qualquer projeto já refatorado        | Diagnóstico inicial, sem risco     |
 
 ---
 
 ## 🔄 FLUXO RECOMENDADO
+
+### Cenário 0: Não Sei Por Onde Começar (Diagnóstico Primeiro)
+
+```
+┌─────────────────────────────────────────┐
+│ 0. Auditoria (Doc 5, read-only)         │ ← Start here
+│    (fluxo único, sem risco)             │ (descobre os problemas reais)
+└─────────────────────────────────────────┘
+                    ↓
+      (com o relatório em mãos, escolha
+       Doc 1, 2 e/ou 3 para corrigir)
+                    ↓
+┌─────────────────────────────────────────┐
+│ 1-3. Refatoração (Doc 1, 2 e/ou 3)      │
+└─────────────────────────────────────────┘
+                    ↓
+┌─────────────────────────────────────────┐
+│ 4. Testes & Cobertura (Doc 4)           │
+└─────────────────────────────────────────┘
+```
+
+**Por quê começar pela auditoria?** Ela não edita nada — é diagnóstico puro. Você usa o relatório para decidir com dados quais dos Docs 1-3 valem o esforço, em vez de adivinhar.
+
+---
 
 ### Cenário 1: Next.js Full-Stack (Frontend + API Routes)
 
@@ -216,6 +265,12 @@ Depois de refatorar (qualquer combinação acima):
 ## 🎯 ORDEM DE EXECUÇÃO POR PRIORIDADE
 
 Independente do documento, **sempre siga essa ordem**:
+
+### 🔎 DIAGNÓSTICO (Opcional, mas Recomendado)
+
+0. **Auditoria:** Doc 5 (Read-Only, qualquer stack)
+
+→ **Por quê?** Não edita nada — mapeia os problemas reais antes de você decidir onde investir esforço nos passos abaixo.
 
 ### 🚨 CRÍTICO (Segurança)
 
@@ -348,6 +403,7 @@ O resultado de cada prompt é um **relatório estruturado** com:
 - **NestJS:** Doc 3 (Backend)
 - **Next.js + NestJS:** Doc 1 + Doc 2 + Doc 3
 - **Qualquer stack, quero cobertura de testes:** Doc 4 (Testes), depois de refatorar
+- **Qualquer stack, não sei onde estão os problemas:** Doc 5 (Auditoria, read-only) — comece por aqui
 
 ### Por Tópico
 
@@ -412,7 +468,11 @@ O resultado de cada prompt é um **relatório estruturado** com:
 → Abra: `4_Testes_Cobertura_Otimizado.md`
 → Comece: o prompt único do documento (funciona em qualquer stack)
 
-**E) Não tenho certeza**
+**E) Não sei onde estão os problemas ainda**
+→ Abra: `5_Auditoria_Engenharia_Software_ReadOnly.md`
+→ Comece: o prompt único do documento (read-only, sem risco, funciona em qualquer stack)
+
+**F) Não tenho certeza**
 → Responda essas 3 perguntas:
 
 1. Seu código é React/Next.js ou NestJS?
