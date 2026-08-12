@@ -6,7 +6,7 @@
 
 ## 🎯 O QUE VOCÊ TEM
 
-Você agora possui **5 documentos especializados** para auditoria, refatoração e teste de projetos:
+Você agora possui **6 documentos especializados** para auditoria, refatoração e teste de projetos:
 
 ### 📄 **Documento 1: Front-End (React/Next.js)**
 
@@ -112,11 +112,35 @@ Especializado em **diagnóstico técnico sem nenhuma alteração de código**:
 
 ---
 
+### 📄 **Documento 6: Segurança, LGPD & Deploy (Read-Only, Agnóstico de Stack)**
+
+**Arquivo:** `6_Auditoria_Seguranca_LGPD_Deploy.md`
+
+Especializado em **auditoria de segurança, conformidade LGPD e prontidão de deploy**, com três critérios de julgamento distintos (AppSec/DevSecOps, especialista LGPD, DevOps/SRE):
+
+- Auto-detecção de stack, mecanismo de auth real e se o projeto lida com dados pessoais
+- Gate de aplicabilidade (38 itens) — pausa para confirmação antes de avaliar item por item
+- Segurança Front-End & Back-End (OWASP ASVS/Top 10/CWE)
+- LGPD específico (conformidade regulatória — Lei 13.709/2018)
+- Checklist de Deploy (inclui itens fora do repositório: CDN, provedor, painel do Supabase)
+- Regras anti-falso-positivo explícitas + distinção "Não implementado" vs "Não verificável"
+
+**Quando usar:** Antes de qualquer deploy em produção que lide com dados pessoais, ou periodicamente para revalidar postura de segurança/conformidade — **read-only**, não altera nada
+
+**Total de prompts:** 1 (fluxo completo)  
+**Tempo de análise:** varia com o tamanho do projeto (1 ponto de confirmação: gate de aplicabilidade)  
+**Tempo de implementação:** N/A (documento não corrige nada, apenas diagnostica)
+
+---
+
 ## 🗺️ COMO ESCOLHER QUAL DOCUMENTO USAR
 
 ```
 ┌─ Não sabe onde estão os problemas ainda?
-│  └─ Documento 5: Auditoria (Read-Only) ✅ — rode primeiro, sem risco
+│  └─ Documento 5: Auditoria de Código (Read-Only) ✅ — rode primeiro, sem risco
+│
+┌─ Vai fazer deploy em produção ou lida com dados pessoais (LGPD)?
+│  └─ Documento 6: Segurança, LGPD & Deploy (Read-Only) ✅ — rode antes de subir para produção
 │
 ┌─ Qual é sua stack?
 │
@@ -143,19 +167,21 @@ Depois de refatorar (qualquer combinação acima):
 
 ## 📊 TABELA COMPARATIVA
 
-| Aspecto                 | Doc 1: Front-End       | Doc 2: Full-Stack   | Doc 3: Backend         | Doc 4: Testes                        | Doc 5: Auditoria                  |
-| ----------------------- | ---------------------- | ------------------- | ---------------------- | ------------------------------------- | ---------------------------------- |
-| **Foco**                | React/Next.js frontend | Next.js completo    | NestJS backend         | Cobertura de testes (qualquer stack) | Diagnóstico read-only (qualquer stack) |
-| **Prompts**             | 7                      | 5                   | 6                      | 1 (fluxo completo)                    | 1 (fluxo completo)                 |
-| **Tempo de análise**    | 110-140 min            | 75-100 min          | 95-130 min             | Varia com o tamanho do projeto        | Varia com o tamanho do projeto     |
-| **Tempo implementação** | 25-50h                 | 20-41h              | 27-52h                 | Varia com a cobertura atual           | N/A (não corrige nada)             |
-| **Performance**         | Front-end metrics      | End-to-end          | Backend optimization   | —                                      | —                                   |
-| **Segurança**           | XSS, CSRF              | Full-stack OWASP    | OWASP Top 10           | —                                      | —                                   |
-| **Database**            | Não                    | Sim (básico)        | Sim (profundo)         | —                                      | —                                   |
-| **API Routes**          | Não                    | Sim                 | Não (NestJS routes)    | —                                      | —                                   |
-| **Testes**              | Unit, Integration, E2E | Unit, Integration   | Unit, Integration, E2E | Unit, Integration, E2E (100%)         | Reporta cobertura existente        |
-| **Edita código?**       | Sim                    | Sim                 | Sim                    | Sim (gera testes)                     | **Não — somente leitura**          |
-| **Melhor para**         | Frontend puro          | Monorepo full-stack | Backend separado       | Qualquer projeto já refatorado        | Diagnóstico inicial, sem risco     |
+| Aspecto                 | Doc 1: Front-End       | Doc 2: Full-Stack   | Doc 3: Backend         | Doc 4: Testes                        | Doc 5: Auditoria de Código        | Doc 6: Segurança/LGPD/Deploy            |
+| ----------------------- | ---------------------- | ------------------- | ---------------------- | ------------------------------------- | ---------------------------------- | ----------------------------------------- |
+| **Foco**                | React/Next.js frontend | Next.js completo    | NestJS backend         | Cobertura de testes (qualquer stack) | Diagnóstico de código (qualquer stack) | Segurança + LGPD + Deploy (qualquer stack) |
+| **Prompts**             | 7                      | 5                   | 6                      | 1 (fluxo completo)                    | 1 (fluxo completo)                 | 1 (fluxo completo)                        |
+| **Tempo de análise**    | 110-140 min            | 75-100 min          | 95-130 min             | Varia com o tamanho do projeto        | Varia com o tamanho do projeto     | Varia com o tamanho do projeto            |
+| **Tempo implementação** | 25-50h                 | 20-41h              | 27-52h                 | Varia com a cobertura atual           | N/A (não corrige nada)             | N/A (não corrige nada)                    |
+| **Performance**         | Front-end metrics      | End-to-end          | Backend optimization   | —                                      | —                                   | —                                           |
+| **Segurança**           | XSS, CSRF              | Full-stack OWASP    | OWASP Top 10           | —                                      | —                                   | OWASP ASVS/Top 10/CWE                     |
+| **LGPD**                | Não                    | Não                 | Não                     | —                                      | —                                   | **Sim — critério regulatório dedicado**   |
+| **Deploy/Infra**        | Não                    | Não                 | Não                     | —                                      | —                                   | **Sim — inclui itens fora do repo**       |
+| **Database**            | Não                    | Sim (básico)        | Sim (profundo)         | —                                      | —                                   | —                                           |
+| **API Routes**          | Não                    | Sim                 | Não (NestJS routes)    | —                                      | —                                   | —                                           |
+| **Testes**              | Unit, Integration, E2E | Unit, Integration   | Unit, Integration, E2E | Unit, Integration, E2E (100%)         | Reporta cobertura existente        | —                                           |
+| **Edita código?**       | Sim                    | Sim                 | Sim                    | Sim (gera testes)                     | **Não — somente leitura**          | **Não — somente leitura**                 |
+| **Melhor para**         | Frontend puro          | Monorepo full-stack | Backend separado       | Qualquer projeto já refatorado        | Diagnóstico inicial, sem risco     | Pré-deploy / conformidade LGPD             |
 
 ---
 
@@ -165,11 +191,14 @@ Depois de refatorar (qualquer combinação acima):
 
 ```
 ┌─────────────────────────────────────────┐
-│ 0. Auditoria (Doc 5, read-only)         │ ← Start here
-│    (fluxo único, sem risco)             │ (descobre os problemas reais)
+│ 0a. Auditoria de Código (Doc 5)         │ ← Start here (podem rodar
+│     (fluxo único, sem risco)            │    em paralelo, avaliam
+├─────────────────────────────────────────┤    domínios diferentes)
+│ 0b. Segurança/LGPD/Deploy (Doc 6)       │
+│     (fluxo único, sem risco)            │
 └─────────────────────────────────────────┘
                     ↓
-      (com o relatório em mãos, escolha
+      (com os relatórios em mãos, escolha
        Doc 1, 2 e/ou 3 para corrigir)
                     ↓
 ┌─────────────────────────────────────────┐
@@ -181,7 +210,7 @@ Depois de refatorar (qualquer combinação acima):
 └─────────────────────────────────────────┘
 ```
 
-**Por quê começar pela auditoria?** Ela não edita nada — é diagnóstico puro. Você usa o relatório para decidir com dados quais dos Docs 1-3 valem o esforço, em vez de adivinhar.
+**Por quê começar pela auditoria?** Docs 5 e 6 não editam nada — são diagnóstico puro. Você usa os relatórios para decidir com dados quais dos Docs 1-3 valem o esforço, em vez de adivinhar. Como avaliam domínios diferentes (qualidade de código vs. segurança/LGPD/deploy), podem rodar em qualquer ordem ou em paralelo.
 
 ---
 
@@ -262,15 +291,37 @@ Depois de refatorar (qualquer combinação acima):
 
 ---
 
+### Cenário 5: Pré-Deploy em Produção (Dados Pessoais / LGPD)
+
+```
+┌─────────────────────────────────────────┐
+│ Segurança, LGPD & Deploy (Doc 6)        │
+│ (fluxo único, read-only)                │
+└─────────────────────────────────────────┘
+                    ↓
+      (corrija os achados Crítico/Alto
+       usando os prompts de Segurança
+       dos Docs 1, 2 e/ou 3)
+                    ↓
+┌─────────────────────────────────────────┐
+│ Deploy                                  │
+└─────────────────────────────────────────┘
+```
+
+**Por quê obrigatório aqui?** O bloco LGPD do Doc 6 trata item ausente como risco legal, não só técnico — rodar antes de qualquer deploy que lide com dados pessoais de usuários brasileiros evita expor o produto a risco de sanção.
+
+---
+
 ## 🎯 ORDEM DE EXECUÇÃO POR PRIORIDADE
 
 Independente do documento, **sempre siga essa ordem**:
 
 ### 🔎 DIAGNÓSTICO (Opcional, mas Recomendado)
 
-0. **Auditoria:** Doc 5 (Read-Only, qualquer stack)
+0. **Auditoria de Código:** Doc 5 (Read-Only, qualquer stack)
+0. **Segurança/LGPD/Deploy:** Doc 6 (Read-Only, qualquer stack) — obrigatório antes de deploy com dados pessoais
 
-→ **Por quê?** Não edita nada — mapeia os problemas reais antes de você decidir onde investir esforço nos passos abaixo.
+→ **Por quê?** Nenhum dos dois edita nada — mapeiam os problemas reais antes de você decidir onde investir esforço nos passos abaixo. Podem rodar em qualquer ordem entre si.
 
 ### 🚨 CRÍTICO (Segurança)
 
@@ -403,7 +454,8 @@ O resultado de cada prompt é um **relatório estruturado** com:
 - **NestJS:** Doc 3 (Backend)
 - **Next.js + NestJS:** Doc 1 + Doc 2 + Doc 3
 - **Qualquer stack, quero cobertura de testes:** Doc 4 (Testes), depois de refatorar
-- **Qualquer stack, não sei onde estão os problemas:** Doc 5 (Auditoria, read-only) — comece por aqui
+- **Qualquer stack, não sei onde estão os problemas:** Doc 5 (Auditoria de Código, read-only) — comece por aqui
+- **Qualquer stack, vou para produção / lido com dados pessoais:** Doc 6 (Segurança/LGPD/Deploy, read-only) — obrigatório antes de deploy
 
 ### Por Tópico
 
@@ -418,6 +470,7 @@ O resultado de cada prompt é um **relatório estruturado** com:
 - Front-End → Prompt 4 (Erros), Prompt 7 (A11y)
 - Back-End → Prompt 3 (Segurança OWASP) **← CRÍTICO**
 - Full-Stack → Prompt 2 (Segurança E2E) **← CRÍTICO**
+- Diagnóstico (Segurança + LGPD + Deploy, read-only) → Doc 6 **← rode antes de deploy**
 
 **Banco de Dados:**
 
@@ -472,7 +525,11 @@ O resultado de cada prompt é um **relatório estruturado** com:
 → Abra: `5_Auditoria_Engenharia_Software_ReadOnly.md`
 → Comece: o prompt único do documento (read-only, sem risco, funciona em qualquer stack)
 
-**F) Não tenho certeza**
+**F) Vou fazer deploy em produção e/ou lido com dados pessoais**
+→ Abra: `6_Auditoria_Seguranca_LGPD_Deploy.md`
+→ Comece: o prompt único do documento (read-only, sem risco, funciona em qualquer stack)
+
+**G) Não tenho certeza**
 → Responda essas 3 perguntas:
 
 1. Seu código é React/Next.js ou NestJS?
