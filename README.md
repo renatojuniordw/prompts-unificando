@@ -1,6 +1,6 @@
-# 📚 Guia Completo de Refatoração - Índice & Navegação
+# 📚 Prompts Unificando — Guia Completo de Refatoração
 
-**Prompts Otimizados para React/Next.js, Full-Stack e NestJS | Versão 10/10**
+**Biblioteca de prompts otimizados para auditoria, refatoração, testes e segurança | Versão 10/10**
 
 ---
 
