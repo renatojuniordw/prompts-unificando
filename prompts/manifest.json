@@ -46,5 +46,11 @@
     "file": "refatoracao-faseada.md",
     "title": "Refatoração Faseada Autônoma (agnóstico de stack)",
     "description": "Pipeline autônomo de 10 fases com detecção de stack, gates de build/lint/test e patch reversível por fase — para quando você quer que o agente execute, não só analise."
+  },
+  {
+    "id": "seo",
+    "file": "seo.md",
+    "title": "Auditoria de SEO — Técnico + Conteúdo (read-only)",
+    "description": "Crawlability, indexação, Core Web Vitals (sinais estruturais), marcação estruturada e conteúdo, com plano de ação priorizado. Agnóstico de stack e sem risco de alteração no código."
   }
 ]

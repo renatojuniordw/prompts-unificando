@@ -30,6 +30,7 @@ npx prompts-unificando get <id> --copy
 | `auditoria-seguranca` | Segurança (OWASP), conformidade LGPD e checklist de deploy | Não — somente leitura |
 | `revisao-copy` | Ortografia, gramática e UX copy voltados ao usuário final | Só texto, nunca lógica |
 | `refatoracao-faseada` | Pipeline autônomo de 10 fases (agnóstico de stack) — detecção automática, gates de build/lint/test e patch reversível por fase | Sim (sob contrato: sem commit/push) |
+| `seo` | SEO técnico e de conteúdo — crawlability, indexação, Core Web Vitals (sinais estruturais), marcação estruturada, thin content, linkagem interna | Não — somente leitura |
 
 ## Como escolher
 
@@ -41,6 +42,7 @@ npx prompts-unificando get <id> --copy
 - **Já refatorou e quer cobertura de testes real?** Use `testes` — rode por último, depois da arquitetura estabilizar.
 - **Gerou ou revisou copy com IA?** Use `revisao-copy` a qualquer momento.
 - **Quer que o agente execute a refatoração sozinho, com gates e rollback por fase, em vez de só sugerir?** Use `refatoracao-faseada` — cobre código morto, duplicação, arquitetura, integração, segurança, performance, erros, a11y/SEO e testes em um único pipeline autônomo.
+- **Quer um raio-x de SEO técnico e de conteúdo antes de lançar ou depois de uma migração?** Use `seo` — read-only, com plano de ação priorizado.
 
 ## Fluxo recomendado
 
