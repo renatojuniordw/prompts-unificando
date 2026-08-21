@@ -6,7 +6,7 @@
 
 ## 🎯 O QUE VOCÊ TEM
 
-Você agora possui **6 documentos especializados** para auditoria, refatoração e teste de projetos:
+Você agora possui **7 documentos especializados** para auditoria, refatoração, teste e revisão de texto de projetos:
 
 ### 📄 **Documento 1: Front-End (React/Next.js)**
 
@@ -133,6 +133,26 @@ Especializado em **auditoria de segurança, conformidade LGPD e prontidão de de
 
 ---
 
+### 📄 **Documento 7: Revisão Ortográfica & UX Copy (Agnóstico de Stack)**
+
+**Arquivo:** `7_Revisao_Ortografica_UX_Copy.md`
+
+Especializado em **revisão de texto visível ao usuário final**, em qualquer stack de frontend/produto digital:
+
+- Detecção automática de stack e padrão de conteúdo (hardcoded, i18n, CMS, `.md`/`.mdx`)
+- Correção ortográfica, gramatical e de crase — aplicada direto, com evidência arquivo:linha
+- Remoção de vícios de linguagem de IA (paralelismo negativo, regra de três artificial, vocabulário inflado, hedging)
+- Diagnóstico e complemento de itens de conteúdo incompletos em coleções (dicas, FAQs, cards)
+- Proposta de item novo de conteúdo — nunca aplicada sem aprovação explícita
+
+**Quando usar:** Você quer garantir que todo texto voltado ao usuário está gramaticalmente correto e soa natural, não como texto genérico de IA — tipicamente depois de gerar ou revisar copy de produto com IA (landing pages, FAQs, onboarding, microcopy)
+
+**Total de prompts:** 1 (fluxo completo)  
+**Tempo de análise:** varia com o volume de texto do projeto  
+**Tempo de implementação:** aplicado direto (exceto item novo de conteúdo, que aguarda aprovação)
+
+---
+
 ## 🗺️ COMO ESCOLHER QUAL DOCUMENTO USAR
 
 ```
@@ -161,27 +181,30 @@ Especializado em **auditoria de segurança, conformidade LGPD e prontidão de de
 Depois de refatorar (qualquer combinação acima):
 └─ Quer cobertura de testes real sobre o código já refatorado?
    └─ Documento 4: Testes & Cobertura ✅ (qualquer stack)
+
+┌─ Gerou ou revisou copy/conteúdo com IA e quer garantir que o texto está correto e soa natural?
+│  └─ Documento 7: Revisão Ortográfica & UX Copy ✅ (qualquer stack)
 ```
 
 ---
 
 ## 📊 TABELA COMPARATIVA
 
-| Aspecto                 | Doc 1: Front-End       | Doc 2: Full-Stack   | Doc 3: Backend         | Doc 4: Testes                        | Doc 5: Auditoria de Código        | Doc 6: Segurança/LGPD/Deploy            |
-| ----------------------- | ---------------------- | ------------------- | ---------------------- | ------------------------------------- | ---------------------------------- | ----------------------------------------- |
-| **Foco**                | React/Next.js frontend | Next.js completo    | NestJS backend         | Cobertura de testes (qualquer stack) | Diagnóstico de código (qualquer stack) | Segurança + LGPD + Deploy (qualquer stack) |
-| **Prompts**             | 7                      | 5                   | 6                      | 1 (fluxo completo)                    | 1 (fluxo completo)                 | 1 (fluxo completo)                        |
-| **Tempo de análise**    | 110-140 min            | 75-100 min          | 95-130 min             | Varia com o tamanho do projeto        | Varia com o tamanho do projeto     | Varia com o tamanho do projeto            |
-| **Tempo implementação** | 25-50h                 | 20-41h              | 27-52h                 | Varia com a cobertura atual           | N/A (não corrige nada)             | N/A (não corrige nada)                    |
-| **Performance**         | Front-end metrics      | End-to-end          | Backend optimization   | —                                      | —                                   | —                                           |
-| **Segurança**           | XSS, CSRF              | Full-stack OWASP    | OWASP Top 10           | —                                      | —                                   | OWASP ASVS/Top 10/CWE                     |
-| **LGPD**                | Não                    | Não                 | Não                     | —                                      | —                                   | **Sim — critério regulatório dedicado**   |
-| **Deploy/Infra**        | Não                    | Não                 | Não                     | —                                      | —                                   | **Sim — inclui itens fora do repo**       |
-| **Database**            | Não                    | Sim (básico)        | Sim (profundo)         | —                                      | —                                   | —                                           |
-| **API Routes**          | Não                    | Sim                 | Não (NestJS routes)    | —                                      | —                                   | —                                           |
-| **Testes**              | Unit, Integration, E2E | Unit, Integration   | Unit, Integration, E2E | Unit, Integration, E2E (100%)         | Reporta cobertura existente        | —                                           |
-| **Edita código?**       | Sim                    | Sim                 | Sim                    | Sim (gera testes)                     | **Não — somente leitura**          | **Não — somente leitura**                 |
-| **Melhor para**         | Frontend puro          | Monorepo full-stack | Backend separado       | Qualquer projeto já refatorado        | Diagnóstico inicial, sem risco     | Pré-deploy / conformidade LGPD             |
+| Aspecto                 | Doc 1: Front-End       | Doc 2: Full-Stack   | Doc 3: Backend         | Doc 4: Testes                        | Doc 5: Auditoria de Código        | Doc 6: Segurança/LGPD/Deploy            | Doc 7: Revisão de Texto             |
+| ----------------------- | ---------------------- | ------------------- | ---------------------- | ------------------------------------- | ---------------------------------- | ----------------------------------------- | ------------------------------------ |
+| **Foco**                | React/Next.js frontend | Next.js completo    | NestJS backend         | Cobertura de testes (qualquer stack) | Diagnóstico de código (qualquer stack) | Segurança + LGPD + Deploy (qualquer stack) | Ortografia + UX copy (qualquer stack) |
+| **Prompts**             | 7                      | 5                   | 6                      | 1 (fluxo completo)                    | 1 (fluxo completo)                 | 1 (fluxo completo)                        | 1 (fluxo completo)                   |
+| **Tempo de análise**    | 110-140 min            | 75-100 min          | 95-130 min             | Varia com o tamanho do projeto        | Varia com o tamanho do projeto     | Varia com o tamanho do projeto            | Varia com o volume de texto          |
+| **Tempo implementação** | 25-50h                 | 20-41h              | 27-52h                 | Varia com a cobertura atual           | N/A (não corrige nada)             | N/A (não corrige nada)                    | Aplicado direto (exceto item novo)   |
+| **Performance**         | Front-end metrics      | End-to-end          | Backend optimization   | —                                      | —                                   | —                                           | —                                     |
+| **Segurança**           | XSS, CSRF              | Full-stack OWASP    | OWASP Top 10           | —                                      | —                                   | OWASP ASVS/Top 10/CWE                     | —                                     |
+| **LGPD**                | Não                    | Não                 | Não                     | —                                      | —                                   | **Sim — critério regulatório dedicado**   | —                                     |
+| **Deploy/Infra**        | Não                    | Não                 | Não                     | —                                      | —                                   | **Sim — inclui itens fora do repo**       | —                                     |
+| **Database**            | Não                    | Sim (básico)        | Sim (profundo)         | —                                      | —                                   | —                                           | —                                     |
+| **API Routes**          | Não                    | Sim                 | Não (NestJS routes)    | —                                      | —                                   | —                                           | —                                     |
+| **Testes**              | Unit, Integration, E2E | Unit, Integration   | Unit, Integration, E2E | Unit, Integration, E2E (100%)         | Reporta cobertura existente        | —                                           | —                                     |
+| **Edita código?**       | Sim                    | Sim                 | Sim                    | Sim (gera testes)                     | **Não — somente leitura**          | **Não — somente leitura**                 | Só texto (nunca lógica/estrutura)    |
+| **Melhor para**         | Frontend puro          | Monorepo full-stack | Backend separado       | Qualquer projeto já refatorado        | Diagnóstico inicial, sem risco     | Pré-deploy / conformidade LGPD             | Copy gerado/revisado com IA          |
 
 ---
 
@@ -456,6 +479,7 @@ O resultado de cada prompt é um **relatório estruturado** com:
 - **Qualquer stack, quero cobertura de testes:** Doc 4 (Testes), depois de refatorar
 - **Qualquer stack, não sei onde estão os problemas:** Doc 5 (Auditoria de Código, read-only) — comece por aqui
 - **Qualquer stack, vou para produção / lido com dados pessoais:** Doc 6 (Segurança/LGPD/Deploy, read-only) — obrigatório antes de deploy
+- **Qualquer stack, quero revisar ortografia e UX copy:** Doc 7 (Revisão Ortográfica & UX Copy) — use após gerar/revisar conteúdo com IA
 
 ### Por Tópico
 
@@ -529,7 +553,11 @@ O resultado de cada prompt é um **relatório estruturado** com:
 → Abra: `6_Auditoria_Seguranca_LGPD_Deploy.md`
 → Comece: o prompt único do documento (read-only, sem risco, funciona em qualquer stack)
 
-**G) Não tenho certeza**
+**G) Gerei ou revisei copy com IA e quero garantir que o texto está correto**
+→ Abra: `7_Revisao_Ortografica_UX_Copy.md`
+→ Comece: o prompt único do documento (funciona em qualquer stack)
+
+**H) Não tenho certeza**
 → Responda essas 3 perguntas:
 
 1. Seu código é React/Next.js ou NestJS?
@@ -590,7 +618,7 @@ Todos os prompts foram:
 
 ---
 
-**Última atualização:** 2026-05-10  
+**Última atualização:** 2026-08-21  
 **Versão:** 10/10 | Production-Ready  
 **Status:** Pronto para Execução ✅
 
