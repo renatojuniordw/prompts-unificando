@@ -40,5 +40,11 @@
     "file": "revisao-copy.md",
     "title": "Revisão Ortográfica e UX Copy",
     "description": "Revisão de texto, ortografia e copy voltada para experiência do usuário."
+  },
+  {
+    "id": "refatoracao-faseada",
+    "file": "refatoracao-faseada.md",
+    "title": "Refatoração Faseada Autônoma (agnóstico de stack)",
+    "description": "Pipeline autônomo de 10 fases com detecção de stack, gates de build/lint/test e patch reversível por fase — para quando você quer que o agente execute, não só analise."
   }
 ]
