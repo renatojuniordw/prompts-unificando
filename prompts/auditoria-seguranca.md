@@ -5,7 +5,7 @@
 
 ## 📋 Índice de Execução
 1. **Auto-detecção de Contexto (Stack, Auth, Infra, Dados Pessoais)**
-2. **Gate de Confirmação de Aplicabilidade (38 itens)**
+2. **Gate de Aplicabilidade (38 itens) — resumo e prosseguimento automático**
 3. **Verificação Detalhada de Conformidade por Bloco**
 4. **Regras Anti-Falso-Positivo**
 5. **Relatório Final por Severidade**
@@ -27,7 +27,7 @@ Diferente do Doc 5 (auditoria de qualidade de código — SOLID/DRY/código mort
 
 **Auditoria de Segurança, LGPD & Deploy:**
 - 🔍 Auto-detecção de stack, mecanismo de auth real, e se o projeto lida com dados pessoais
-- 🚦 Gate de aplicabilidade — pausa antes de avaliar item por item (evita retrabalho)
+- 🚦 Gate de aplicabilidade — resume o que é aplicável antes de avaliar item por item e segue direto (evita retrabalho sem pausar a execução)
 - 🛡️ Segurança Front-End & Back-End (critério OWASP ASVS/Top 10/CWE)
 - ⚖️ LGPD específico (critério de conformidade regulatória, não só boa prática)
 - 🚀 Checklist de Deploy (DevOps/SRE — inclui itens fora do repositório)
@@ -74,7 +74,7 @@ implementado" só porque não aparecem no código. Devem ser classificados como 
 repositório", com uma nota indicando onde essa verificação precisaria ocorrer (painel do provedor,
 configuração de infra, etc.).
 
-ETAPA 0.5 — GATE DE CONFIRMAÇÃO DE APLICABILIDADE (OBRIGATÓRIO, PAUSA ANTES DE AVANÇAR)
+ETAPA 0.5 — GATE DE APLICABILIDADE (OBRIGATÓRIO, RESUMO SEM PAUSAR A EXECUÇÃO)
 Após a Etapa 0, apresente uma tabela resumida de aplicabilidade para os 38 itens do checklist (todas
 as 4 categorias), com três colunas:
 
@@ -85,9 +85,11 @@ Critérios de "Não aplicável" (exemplos, não exaustivo):
 - Item de CDN/DDoS se não há evidência de camada de CDN no projeto
 - Item de cookie banner se o projeto não coleta dados pessoais nem usa cookies de rastreamento
 
-Pause aqui e aguarde confirmação explícita antes de prosseguir para a verificação detalhada de
-conformidade (Etapa 1). Isso evita retrabalho caso a auto-detecção da Etapa 0 tenha classificado
-algo incorretamente como aplicável/não aplicável.
+Registre essa tabela no relatório e prossiga automaticamente para a verificação detalhada de
+conformidade (Etapa 1), sem pedir autorização — a execução já foi solicitada ao rodar este prompt.
+Solicite intervenção humana apenas se um item "Incerto" tiver impacto tão grande na classificação
+dos demais que prosseguir sem esclarecer geraria retrabalho real (ex: não dá para saber se há
+camada de auth alguma).
 
 ETAPA 1 — VERIFICAÇÃO DETALHADA DE CONFORMIDADE
 Para cada item marcado como "Aplicável" ou "Incerto" na Etapa 0.5, verifique:
@@ -140,7 +142,8 @@ REGRAS NÃO-NEGOCIÁVEIS
 - Terminologia agnóstica de ferramenta específica — descreva o problema e a solução em termos
   técnicos gerais, não amarrados a uma stack específica, exceto quando a auto-detecção da Etapa 0
   identificar a stack real do projeto (nesse caso, use os termos exatos da stack detectada).
-- Pausar na Etapa 0.5 e aguardar confirmação antes de gerar o relatório completo.
+- Registrar a tabela da Etapa 0.5 no relatório e seguir direto para a verificação completa, sem
+  pausar para aprovação — a autonomia já foi concedida ao executar este prompt.
 - Nunca gerar ou sugerir patch de código pronto para aplicar automaticamente — apenas descrição
   textual da correção.
 

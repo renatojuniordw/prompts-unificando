@@ -4,6 +4,11 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/). 
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-08-21
+
+### Fixed
+- Prompts `auditoria-seguranca` e `seo`: removido o gate que pausava a execução e aguardava confirmação explícita antes da análise detalhada. Agora o resumo de aplicabilidade/escopo é registrado no relatório e a análise prossegue automaticamente, sem exigir aprovação intermediária.
+
 ## [1.1.0] - 2026-08-21
 
 ### Added

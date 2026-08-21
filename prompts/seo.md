@@ -5,7 +5,7 @@
 
 ## 📋 Índice de Execução
 1. **Reconhecimento do Projeto (Stack, Renderização, Roteamento)**
-2. **Gate de Confirmação de Escopo (23 itens)**
+2. **Gate de Escopo (23 itens) — resumo e prosseguimento automático**
 3. **Checklist Técnico — Crawlability, Indexação, Performance**
 4. **Checklist de Conteúdo e Autoridade**
 5. **Regras Anti-Falso-Positivo Específicas de SEO**
@@ -24,7 +24,7 @@ Diferente dos demais prompts de auditoria desta biblioteca (qualidade de código
 
 **Auditoria de SEO Técnico & Conteúdo:**
 - 🔍 Reconhecimento de renderização real (SSR/SSG/CSR/ISR) confirmado no código, não assumido pelo framework
-- 🚦 Gate de aplicabilidade — pausa antes de avaliar item por item, filtrando o que não se aplica à stack
+- 🚦 Gate de aplicabilidade — resume o que se aplica à stack antes de avaliar item por item e segue direto
 - 🕷️ Crawlability, indexação, canonical, sitemap/robots.txt, rastreabilidade de JS
 - 📈 Core Web Vitals — apenas sinais estruturais no código, nunca medição real sem ferramenta externa
 - 📝 Conteúdo: thin content, meta tags únicas vs. template genérico, E-E-A-T, linkagem interna
@@ -63,14 +63,16 @@ Antes de aplicar qualquer item do checklist, mapeie:
 
 Registre esse mapeamento no início do relatório. Ele é a base para todo o resto — sem isso, itens como "JS rastreável" e "Core Web Vitals" não podem ser avaliados corretamente.
 
-## ETAPA 0.5 — Gate de confirmação de escopo
+## ETAPA 0.5 — Gate de escopo
 
-Depois do reconhecimento, **pare e apresente um resumo** de:
+Depois do reconhecimento, **apresente um resumo** de:
 - O que foi identificado (stack, renderização, tamanho aproximado do projeto/rotas).
 - Quais dos 23 itens do checklist (Etapa 1 e 2) são **aplicáveis** a este projeto e quais são **não aplicáveis** (ex.: "backlinks" e "keyword research" nunca são verificáveis via código-fonte).
-- Peça confirmação antes de prosseguir para a análise profunda.
 
-Não avance para a Etapa 1 sem essa confirmação.
+Registre esse resumo no início do relatório e prossiga automaticamente para a Etapa 1 — não pause
+para pedir confirmação; a execução já foi solicitada ao rodar este prompt. Só interrompa se a
+detecção de stack/renderização for ambígua a ponto de inviabilizar a análise (ex: nenhum manifest
+identificável).
 
 ---
 
