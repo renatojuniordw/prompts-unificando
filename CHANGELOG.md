@@ -4,6 +4,14 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/). 
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-08-21
+
+### Added
+- Prompt `refatoracao-faseada`: pipeline autônomo de 10 fases (agnóstico de stack), com detecção automática de stack, gates de build/lint/test e patch reversível por fase.
+- Prompt `seo`: auditoria de SEO técnico e de conteúdo (read-only) — crawlability, indexação, Core Web Vitals (sinais estruturais), marcação estruturada e plano de ação priorizado.
+
+## [1.0.2] - 2026-08-21
+
 ### Added
 - Testes automatizados do CLI (`npm test`).
 - GitHub Action que publica no npm automaticamente ao criar uma tag `v*`.
