@@ -1,0 +1,31 @@
+{
+  "name": "prompts-unificando",
+  "version": "1.0.0",
+  "description": "Biblioteca de prompts padronizados para auditoria, refatoração, testes, segurança/LGPD e revisão de copy, agnóstica de stack e de LLM.",
+  "bin": {
+    "prompts-unificando": "./bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "prompts",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "prompts",
+    "llm",
+    "ai",
+    "code-review",
+    "refactoring",
+    "audit",
+    "cli"
+  ],
+  "author": "Renato Bezerra",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renatojuniordw/prompts-unificando.git"
+  }
+}

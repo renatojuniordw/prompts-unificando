@@ -1,0 +1,44 @@
+[
+  {
+    "id": "frontend",
+    "file": "frontend.md",
+    "title": "Front-End (React/Next.js)",
+    "description": "Refatoração de camada frontend: código morto, duplicação, performance (Core Web Vitals), erros com UX, acessibilidade e SEO."
+  },
+  {
+    "id": "fullstack",
+    "file": "fullstack.md",
+    "title": "Full-Stack (Next.js)",
+    "description": "Refatoração full-stack em repositório único Next.js: integração front-back, validação e segurança end-to-end, performance, testes."
+  },
+  {
+    "id": "backend",
+    "file": "backend.md",
+    "title": "Backend (NestJS)",
+    "description": "Arquitetura, banco de dados, segurança (OWASP Top 10), performance, testes e documentação de API para backend NestJS."
+  },
+  {
+    "id": "testes",
+    "file": "testes.md",
+    "title": "Testes & Cobertura (agnóstico de stack)",
+    "description": "Cobertura de testes real em qualquer linguagem/framework: mapeamento de regras de negócio, reconciliação de testes existentes, pirâmide de testes."
+  },
+  {
+    "id": "auditoria-engenharia",
+    "file": "auditoria-engenharia.md",
+    "title": "Auditoria de Engenharia de Software (read-only)",
+    "description": "Diagnóstico técnico sem alteração de código, com detecção automática de stack."
+  },
+  {
+    "id": "auditoria-seguranca",
+    "file": "auditoria-seguranca.md",
+    "title": "Auditoria de Segurança, LGPD e Deploy",
+    "description": "Revisão de segurança, conformidade LGPD e práticas de deploy."
+  },
+  {
+    "id": "revisao-copy",
+    "file": "revisao-copy.md",
+    "title": "Revisão Ortográfica e UX Copy",
+    "description": "Revisão de texto, ortografia e copy voltada para experiência do usuário."
+  }
+]

@@ -4,13 +4,34 @@
 
 ---
 
+## ⚡ INSTALAÇÃO
+
+Não precisa clonar o repositório. Use direto via `npx` (Node.js 18+):
+
+```bash
+# lista os prompts disponíveis
+npx prompts-unificando list
+
+# imprime um prompt no terminal
+npx prompts-unificando get frontend
+
+# copia o prompt para a área de transferência
+npx prompts-unificando get auditoria-seguranca --copy
+```
+
+Os IDs usados no comando são: `frontend`, `fullstack`, `backend`, `testes`, `auditoria-engenharia`, `auditoria-seguranca`, `revisao-copy`.
+
+Funciona com qualquer LLM (Claude, ChatGPT, Gemini, etc.) e qualquer IDE — o CLI só entrega o texto do prompt, você cola onde quiser.
+
+---
+
 ## 🎯 O QUE VOCÊ TEM
 
 Você agora possui **7 documentos especializados** para auditoria, refatoração, teste e revisão de texto de projetos:
 
 ### 📄 **Documento 1: Front-End (React/Next.js)**
 
-**Arquivo:** `1_FrontEnd_React_NextJS_Otimizado.md`
+**Arquivo:** `prompts/frontend.md` (`npx prompts-unificando get frontend`)
 
 Especializado em refatoração de **camada frontend**:
 
@@ -32,7 +53,7 @@ Especializado em refatoração de **camada frontend**:
 
 ### 📄 **Documento 2: Full-Stack (Next.js)**
 
-**Arquivo:** `2_FullStack_NextJS_Otimizado.md`
+**Arquivo:** `prompts/fullstack.md` (`npx prompts-unificando get fullstack`)
 
 Especializado em refatoração **full-stack em um único repositório Next.js**:
 
@@ -52,7 +73,7 @@ Especializado em refatoração **full-stack em um único repositório Next.js**:
 
 ### 📄 **Documento 3: Backend (NestJS)**
 
-**Arquivo:** `3_Backend_NestJS_Otimizado.md`
+**Arquivo:** `prompts/backend.md` (`npx prompts-unificando get backend`)
 
 Especializado em refatoração de **backend profissional com NestJS**:
 
@@ -73,7 +94,7 @@ Especializado em refatoração de **backend profissional com NestJS**:
 
 ### 📄 **Documento 4: Testes & Cobertura (Agnóstico de Stack)**
 
-**Arquivo:** `4_Testes_Cobertura_Otimizado.md`
+**Arquivo:** `prompts/testes.md` (`npx prompts-unificando get testes`)
 
 Especializado em **cobertura de testes 100%**, em qualquer linguagem/framework:
 
@@ -93,7 +114,7 @@ Especializado em **cobertura de testes 100%**, em qualquer linguagem/framework:
 
 ### 📄 **Documento 5: Auditoria de Engenharia (Read-Only, Agnóstico de Stack)**
 
-**Arquivo:** `5_Auditoria_Engenharia_Software_ReadOnly.md`
+**Arquivo:** `prompts/auditoria-engenharia.md` (`npx prompts-unificando get auditoria-engenharia`)
 
 Especializado em **diagnóstico técnico sem nenhuma alteração de código**:
 
@@ -114,7 +135,7 @@ Especializado em **diagnóstico técnico sem nenhuma alteração de código**:
 
 ### 📄 **Documento 6: Segurança, LGPD & Deploy (Read-Only, Agnóstico de Stack)**
 
-**Arquivo:** `6_Auditoria_Seguranca_LGPD_Deploy.md`
+**Arquivo:** `prompts/auditoria-seguranca.md` (`npx prompts-unificando get auditoria-seguranca`)
 
 Especializado em **auditoria de segurança, conformidade LGPD e prontidão de deploy**, com três critérios de julgamento distintos (AppSec/DevSecOps, especialista LGPD, DevOps/SRE):
 
@@ -135,7 +156,7 @@ Especializado em **auditoria de segurança, conformidade LGPD e prontidão de de
 
 ### 📄 **Documento 7: Revisão Ortográfica & UX Copy (Agnóstico de Stack)**
 
-**Arquivo:** `7_Revisao_Ortografica_UX_Copy.md`
+**Arquivo:** `prompts/revisao-copy.md` (`npx prompts-unificando get revisao-copy`)
 
 Especializado em **revisão de texto visível ao usuário final**, em qualquer stack de frontend/produto digital:
 
@@ -404,7 +425,7 @@ Independente do documento, **sempre siga essa ordem**:
 
 ### Passo 1: Leia o Documento
 
-Abra o arquivo `.md` correspondente ao seu projeto.
+Rode `npx prompts-unificando get <id>` (veja a tabela de IDs na seção de Instalação) ou abra o arquivo `.md` correspondente em `prompts/`.
 
 ### Passo 2: Escolha o Prompt
 
@@ -530,31 +551,31 @@ O resultado de cada prompt é um **relatório estruturado** com:
 ### Qual é seu cenário?
 
 **A) React/Next.js Frontend**
-→ Abra: `1_FrontEnd_React_NextJS_Otimizado.md`
+→ `npx prompts-unificando get frontend`
 → Comece: Prompt 1 (Análise de Código Morto)
 
 **B) Next.js Full-Stack (Frontend + API)**
-→ Abra: `2_FullStack_NextJS_Otimizado.md` (depois `1_FrontEnd_React_NextJS_Otimizado.md`)
+→ `npx prompts-unificando get fullstack` (depois `get frontend`)
 → Comece: Prompt 2 (Validação & Segurança)
 
 **C) NestJS Backend**
-→ Abra: `3_Backend_NestJS_Otimizado.md`
+→ `npx prompts-unificando get backend`
 → Comece: Prompt 3 (Segurança OWASP)
 
 **D) Já refatorei e quero cobertura de testes 100%**
-→ Abra: `4_Testes_Cobertura_Otimizado.md`
+→ `npx prompts-unificando get testes`
 → Comece: o prompt único do documento (funciona em qualquer stack)
 
 **E) Não sei onde estão os problemas ainda**
-→ Abra: `5_Auditoria_Engenharia_Software_ReadOnly.md`
+→ `npx prompts-unificando get auditoria-engenharia`
 → Comece: o prompt único do documento (read-only, sem risco, funciona em qualquer stack)
 
 **F) Vou fazer deploy em produção e/ou lido com dados pessoais**
-→ Abra: `6_Auditoria_Seguranca_LGPD_Deploy.md`
+→ `npx prompts-unificando get auditoria-seguranca`
 → Comece: o prompt único do documento (read-only, sem risco, funciona em qualquer stack)
 
 **G) Gerei ou revisei copy com IA e quero garantir que o texto está correto**
-→ Abra: `7_Revisao_Ortografica_UX_Copy.md`
+→ `npx prompts-unificando get revisao-copy`
 → Comece: o prompt único do documento (funciona em qualquer stack)
 
 **H) Não tenho certeza**
