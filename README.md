@@ -1,5 +1,9 @@
 # Prompts Unificando
 
+[![npm version](https://img.shields.io/npm/v/prompts-unificando.svg)](https://www.npmjs.com/package/prompts-unificando)
+[![npm downloads](https://img.shields.io/npm/dm/prompts-unificando.svg)](https://www.npmjs.com/package/prompts-unificando)
+[![license](https://img.shields.io/npm/l/prompts-unificando.svg)](./LICENSE)
+
 Biblioteca de prompts padronizados para auditoria, refatoração, testes, segurança/LGPD e revisão de copy. Agnóstica de stack e de LLM — funciona com Claude, ChatGPT, Gemini ou qualquer outro modelo, em qualquer IDE.
 
 ## Instalação
